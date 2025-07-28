@@ -6,7 +6,7 @@
 #    By: epinaud <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/14 23:52:40 by epinaud           #+#    #+#              #
-#    Updated: 2025/07/27 16:50:19 by epinaud          ###   ########.fr        #
+#    Updated: 2025/07/28 15:02:35 by epinaud          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ EXE = nowWeareTalking
 
 CC = c++
 
-CFLAGS = -std=c++98 -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -g3
 
 INCLUDES = -I. -Iincludes/
 

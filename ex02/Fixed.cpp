@@ -6,7 +6,7 @@
 /*   By: epinaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 10:45:31 by epinaud           #+#    #+#             */
-/*   Updated: 2025/07/28 02:17:19 by epinaud          ###   ########.fr       */
+/*   Updated: 2025/07/28 15:33:19 by epinaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,92 +60,90 @@ Fixed::Fixed(const Fixed &copy) {
 	*this = copy;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy) {
+Fixed &Fixed::operator=(const Fixed &target) {
 	// std::cout << "Copy assignement operator called" << std::endl;
-	this->_fixedValue = copy.getRawBits();
+	this->_fixedValue = target.getRawBits();
 	return (*this);
 }
 
-bool Fixed::operator>(const Fixed &copy) const {
+bool Fixed::operator>(const Fixed copy) const {
 	// std::cout << "Copy greaterThan operator called" << std::endl;
 	return (this->getRawBits() > copy.getRawBits());
 }
 
-bool Fixed::operator<(const Fixed &copy) const {
+bool Fixed::operator<(const Fixed copy) const {
 	// std::cout << "Copy lowerThan operator called" << std::endl;
 	return (this->getRawBits() < copy.getRawBits());
 }
 
-bool Fixed::operator>=(const Fixed &copy) const {
+bool Fixed::operator>=(const Fixed copy) const {
 	// std::cout << "Copy greaterOrEqualTo operator called" << std::endl;
 	return (this->getRawBits() >= copy.getRawBits());
 }
 
-bool Fixed::operator<=(const Fixed &copy) const {
+bool Fixed::operator<=(const Fixed copy) const {
 	// std::cout << "Copy lowerOrEqualTo operator called" << std::endl;
 	return (this->getRawBits() <= copy.getRawBits());
 }
 
-bool Fixed::operator==(const Fixed &copy) const {
+bool Fixed::operator==(const Fixed copy) const {
 	// std::cout << "Copy equal operator called" << std::endl;
 	return (this->getRawBits() == copy.getRawBits());
 }
 
-bool Fixed::operator!=(const Fixed &copy) const {
+bool Fixed::operator!=(const Fixed copy) const {
 	// std::cout << "Copy notEqual operator called" << std::endl;
 	return (this->getRawBits() != copy.getRawBits());
 }
 
-Fixed Fixed::operator+(const Fixed &copy) {
-	// std::cout << "Copy assignement operator called" << std::endl;
-	this->_fixedValue += copy.getRawBits();
-	return (*this);
+Fixed Fixed::operator+(const Fixed copy) const {
+	Fixed	result;
+
+	result.setRawBits(getRawBits() + copy.getRawBits());
+	return (result);
 }
 
-Fixed Fixed::operator-(const Fixed &copy) {
-	// std::cout << "Copy assignement operator called" << std::endl;
-	this->_fixedValue -= copy.getRawBits();
-	return (*this);
+Fixed Fixed::operator-(const Fixed copy) const {
+	Fixed	result;
+
+	result.setRawBits(getRawBits() - copy.getRawBits());
+	return (result);
 }
 
-Fixed Fixed::operator*(const Fixed &copy) {
-		Fixed	results;
-	// std::cout << "Copy assignement operator called" << std::endl;
-	// this->_fixedValue *= copy.getRawBits();
-	results.setRawBits((this->_fractValue * copy._fixedValue) >> this->_fractValue);
-		return (results);
+Fixed Fixed::operator*(const Fixed copy) const {
+	Fixed	result;
+
+	result.setRawBits(getRawBits() * copy.getRawBits() >> _fractValue);
+	return (result);
 }
 
-Fixed Fixed::operator/(const Fixed &copy) {
-	Fixed	results;
-	// std::cout << "Copy assignement operator called" << std::endl;
-	results._fixedValue /= copy.getRawBits();
-	return (results);
+Fixed Fixed::operator/(const Fixed copy) const {
+	Fixed	result;
+
+	result.setRawBits(getRawBits() / copy.getRawBits() << _fractValue);
+	return (result);
 }
 
 Fixed &Fixed::operator++( void ) {
-	// std::cout << "Copy assignement operator called" << std::endl;
 	this->_fixedValue++;
 	return (*this);
 }
 
 Fixed Fixed::operator++( int ) {
 	Fixed tmp = *this;
-	// std::cout << "Copy assignement operator called" << std::endl;
 	this->_fixedValue++;
 	return (tmp);
 }
 
 Fixed &Fixed::operator--( void ) {
-	// std::cout << "Copy assignement operator called" << std::endl;
 	this->_fixedValue--;
 	return (*this);
 }
 
 Fixed Fixed::operator--( int ) {
-	// std::cout << "Copy assignement operator called" << std::endl;
+	Fixed tmp = *this;
 	this->_fixedValue--;
-	return (*this);
+	return (tmp);
 }
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b) {

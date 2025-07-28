@@ -6,7 +6,7 @@
 /*   By: epinaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 02:09:54 by epinaud           #+#    #+#             */
-/*   Updated: 2025/07/28 02:13:06 by epinaud          ###   ########.fr       */
+/*   Updated: 2025/07/28 15:33:29 by epinaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ class Fixed {
 		~Fixed( void );
 		Fixed(const Fixed& copy);
 		Fixed	&operator=(const Fixed &src);
-		bool	operator>(const Fixed &src) const;
-		bool	operator<(const Fixed &src) const;
-		bool	operator>=(const Fixed &src) const;
-		bool	operator<=(const Fixed &src) const;
-		bool	operator==(const Fixed &src) const;
-		bool	operator!=(const Fixed &src) const;
+		bool	operator>(const Fixed src) const;
+		bool	operator<(const Fixed src) const;
+		bool	operator>=(const Fixed src) const;
+		bool	operator<=(const Fixed src) const;
+		bool	operator==(const Fixed src) const;
+		bool	operator!=(const Fixed src) const;
 
-		Fixed	operator+(const Fixed &src);
-		Fixed	operator-(const Fixed &src);
-		Fixed	operator*(const Fixed &src);
-		Fixed	operator/(const Fixed &src);
+		Fixed	operator+(const Fixed src) const;
+		Fixed	operator-(const Fixed src) const;
+		Fixed	operator*(const Fixed src) const;
+		Fixed	operator/(const Fixed src) const;
 
 		Fixed	&operator++( void );
 		Fixed	operator++( int );
