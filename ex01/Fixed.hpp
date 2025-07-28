@@ -6,7 +6,7 @@
 /*   By: epinaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 02:09:54 by epinaud           #+#    #+#             */
-/*   Updated: 2025/07/27 13:45:29 by epinaud          ###   ########.fr       */
+/*   Updated: 2025/07/27 21:06:58 by epinaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed {
 
 	private:
-		int _fixptValue;
+		int _fixedValue;
 		static const int _fractValue;
 
 	public:
