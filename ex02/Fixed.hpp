@@ -6,7 +6,7 @@
 /*   By: epinaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 02:09:54 by epinaud           #+#    #+#             */
-/*   Updated: 2025/07/28 15:33:29 by epinaud          ###   ########.fr       */
+/*   Updated: 2025/08/11 00:38:21 by epinaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ class Fixed {
 		static Fixed		&max(Fixed &a, Fixed &b);
 };
 
-std::ostream&	operator<<(std::ostream &out, const Fixed &fixed);
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
