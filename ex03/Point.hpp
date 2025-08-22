@@ -6,7 +6,7 @@
 /*   By: epinaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 22:33:12 by epinaud           #+#    #+#             */
-/*   Updated: 2025/08/19 23:04:08 by epinaud          ###   ########.fr       */
+/*   Updated: 2025/08/19 23:23:10 by epinaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ class Point {
 };
 
 bool 			bsp( Point const a, Point const b, Point const c, Point const point);
-std::ostream	&operator<<(std::ostream &o, Point const point);
+std::ostream	&operator<<(std::ostream &o, Point const &point);
 
 #endif
